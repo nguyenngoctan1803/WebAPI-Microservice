@@ -1,0 +1,124 @@
+<section class="section-pagetop bg">
+    <div class="container">
+        <br>
+    </div> <!-- container //  -->
+</section>
+
+<section class="section-content padding-y">
+    <div class="container">
+
+        <div class="row">
+            <main class="col-md-9">
+                <div class="card">
+                    <table class="table table-borderless table-shopping-cart" *ngIf="products.length > 0">
+             
+                            <thead style="font-size:small !important">
+                                <tr>
+                                    <th class="text-center col-lg-auto">#</th>
+                                    <th class="text-center col-lg-auto">Product</th>
+                                    <th class="text-center col-lg-auto" style="width:150px">Image</th>
+                                    <th class="text-center col-lg-auto">Price</th>
+                                    <th class="text-center col-lg-auto">Color</th>
+                                    <th class="text-center col-lg-auto">Date Order</th>
+                                    <th class="text-center col-lg-auto">Name</th>
+                                    <th class="text-center col-lg-auto">Phone</th>
+                                    <th class="text-center col-lg-auto">Address</th>
+                                    <th class="text-center col-lg-auto">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-data" style="font-size:small !important">
+                               
+                                <tr *ngFor="let product of products">
+                                    <td class="text-center">
+                                        <input name="checkId" type="checkbox" />
+                                    </td>
+                                    <td>{{product.name}}</td>
+                                    <td ><img style="width:100%;"src="{{product.image}}" alt=""></td>
+                                    <td >{{product.price}}</td>
+                                    <td >{{product.color}}</td>
+                                    <td >{{ordered.date}}</td>
+                                    <td >{{ordered.name}}</td>
+                                    <td >{{ordered.phone}}</td>
+                                    <td >{{ordered.address}}</td>
+                                    <td class="text-center">
+                                        <a style="font-size:small!important" href="admin/product/update/{{product.id}}" class="btn btn-sm btn-info">
+                                            <i class="fa fa-wrench"></i>
+                                      
+                                        </a>               
+                                        <a style="font-size:small !important" href="admin/product/delete/{{product.id}}" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                     
+                                        </a>
+                                    </td>
+                                </tr>
+                
+                            </tbody>
+                                   
+                    </table>          
+                </div> <!-- card.// -->
+                <div class="alert alert-success mt-3">
+                    <p class="icontext"><i class="icon text-success fa fa-truck"></i> Free Delivery within 1-2 weeks</p>
+                </div>
+            </main> <!-- col.// -->
+            <aside class="col-md-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Have coupon?</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="" placeholder="Coupon code">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-primary">Apply</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div> <!-- card-body.// -->
+                </div> <!-- card .// -->
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total price:</dt>
+                            <dd class="text-right">${{totalprice}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Discount:</dt>
+                            <dd class="text-right">${{discount}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right  h5"><strong>${{totalprice-discount}}</strong></dd>
+                        </dl>
+                        <hr>
+                        <div class="text-center" *ngIf="products.length > 0">
+                            <a href="order" class="btn btn-primary float-md-right" style="margin:auto !important;"> Make Purchase <i class="fa fa-credit-card"></i> </a>
+                        </div>
+                        <div class="text-center" *ngIf="products.length == 0">
+                            <p>Cart is Empty. Please go Shopping</p>
+                        </div>
+                        
+
+                    </div> <!-- card-body.// -->
+                </div> <!-- card .// -->
+                <div class="card-body border-top">
+                    <a href="product" class="btn btn-light" style="float: left;"> <i class="fa fa-chevron-left"></i> Continue shopping </a>
+                </div>
+            </aside> <!-- col.// -->
+        </div>
+
+    </div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name bg padding-y">
+    <div class="container">
+        <h6>Payment and refund policy</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->

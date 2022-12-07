@@ -1,0 +1,94 @@
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+
+<section class="clearfix header bg-black">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                <a class="navbar-brand" href=""><i class="fa fa-horizontal"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                        <li class="nav-item">
+                            <a class="nav-link"href="admin/order" *ngIf="AdminMode || SalerMode">Order</a>
+                        </li>                    
+                        <li class="nav-item">
+                            <a class="nav-link"href="admin/product"*ngIf="AdminMode">Product</a>
+                        </li>                   
+                        <li class="nav-item">
+                            <a class="nav-link"href="admin/brand"*ngIf="AdminMode">Brand</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link"href="admin/category"*ngIf="AdminMode">Category</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link"href="admin/warehouse"*ngIf="StoreMode">Ware House</a>
+                        </li>  
+                    </ul>
+                    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+                        <li class="nav-item">
+                          <a href="/admin/login" class="nav-link" routerLink="login">Login</a>
+                        </li>
+                      </ul>
+                  
+                      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+                        <li class="nav-item">
+                          <a href="/admin/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href class="nav-link" (click)="logout()">LogOut</a>
+                        </li>
+                      </ul>
+
+        </nav>
+    </div>
+</section>
+<router-outlet></router-outlet>
+<footer class="bg-dark" id="tempaltemo_footer">
+    <div class="container">
+        <div class="row text-light mb-4">
+            <div class="col-12 mb-3">
+                <div class="w-100 my-3 border-top border-light"></div>
+            </div>
+            <div class="col-auto me-auto">
+                <ul class="list-inline text-left footer-icons">
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="#"><i
+                                class="fa fa-facebook fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="#"><i
+                                class="fa fa-instagram fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="#"><i
+                                class="fa fa-twitter fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="#"><i
+                                class="fa fa-linkedin fa-lg fa-fw"></i></a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="w-100 bg-black py-3">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-12">
+                    <p class="text-left text-light">
+                        Copyright &copy; 2022 VNPT
+                        | Designed by <a rel="sponsored" href="#" target="_blank">Shiba9duoi</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+

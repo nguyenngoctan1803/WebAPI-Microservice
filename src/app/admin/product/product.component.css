@@ -1,0 +1,15 @@
+.text-small{
+    font-size:12px !important;
+}
+.text-data{
+    font-size: 14px !important;
+}
+div img {
+    display: block;
+    height: auto;
+    min-width: 100%;
+    width: 100%;
+    border-radius: 10px !important;
+    background-size: cover;
+  }
+  

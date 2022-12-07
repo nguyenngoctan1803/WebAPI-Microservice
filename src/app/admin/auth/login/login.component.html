@@ -1,0 +1,37 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+	<div>Site<span>Admin</span></div>
+</div>
+<br />
+<div class="login">
+	<form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+		<input type="text" placeholder="username" [ngModelOptions]="{standalone: true}" [(ngModel)]="form.username" required #username="ngModel" /><br />
+		<div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+			Username is required!
+		</div>
+		<input type="password" placeholder="password"[ngModelOptions]="{standalone: true}" [(ngModel)]="form.password" required minlength="6"
+			#password="ngModel" /><br />
+		<div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+			<div *ngIf="password.errors['required']">
+				Password is required
+			</div>
+			<div *ngIf="password.errors['minlength']">
+				Password must be at least 6 characters
+			</div>
+		</div>
+<input type="submit" value="Login" />
+<div class="form-group">
+	<div
+	  class="alert alert-danger"
+	  role="alert"
+	  *ngIf="f.submitted && isLoginError"
+	>
+	  Login failed: {{ errorMessage }}
+	</div>
+  </div>
+</form>
+<div class="alert alert-success" *ngIf="isLoggedIn">
+	Logged in as {{ roles }}.
+  </div>
+</div>

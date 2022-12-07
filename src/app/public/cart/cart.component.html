@@ -1,0 +1,109 @@
+<section class="section-pagetop bg">
+    <div class="container">
+        <br>
+    </div> <!-- container //  -->
+</section>
+
+<section class="section-content padding-y">
+    <div class="container">
+
+        <div class="row">
+            <main class="col-md-8">
+                <div class="card">
+                    <table class="table table-borderless table-shopping-cart" *ngIf="products.length > 0">
+                        <div class="row" *ngFor="let product of products;let i = index" >
+                            <div class="col-md-6">
+                                <img src="{{products[i].image}}" alt="#">
+                            </div>    
+                            <div class="col-md-6">
+                                <div class="product-dtl">
+                                    <div class="product-info">
+                                        <div class="product-name"><h2>{{products[i].name}}</h2></div>
+                                        <div class="product-price-discount"><span>${{products[i].price}}</span></div>
+                                    </div>
+                                    <p>{{products[i].info}}</p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="brand">Brand</label>
+                                            <select id="brand" name="brand" class="form-control">
+                                                <option>{{brands[i].name}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="color">Color</label>
+                                            <select id="color" name="color" class="form-control">
+                                                <option>{{products[i].color}}</option>               
+                                            </select>
+                                        </div>
+                                    </div>              
+                                </div>
+                            </div>
+                        </div>                
+                    </table>          
+                </div> <!-- card.// -->
+                <div class="alert alert-success mt-3">
+                    <p class="icontext"><i class="icon text-success fa fa-truck"></i> Free Delivery within 1-2 weeks</p>
+                </div>
+            </main> <!-- col.// -->
+            <aside class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Have coupon?</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="" placeholder="Coupon code">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-primary">Apply</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div> <!-- card-body.// -->
+                </div> <!-- card .// -->
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total price:</dt>
+                            <dd class="text-right">${{totalprice}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Discount:</dt>
+                            <dd class="text-right">${{discount}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right  h5"><strong>${{totalprice-discount}}</strong></dd>
+                        </dl>
+                        <hr>
+                        <div class="text-center" *ngIf="products.length > 0">
+                            <a href="order" class="btn btn-primary float-md-right" style="margin:auto !important;"> Make Purchase <i class="fa fa-credit-card"></i> </a>
+                        </div>
+                        <div class="text-center" *ngIf="products.length == 0">
+                            <p>Cart is Empty. Please go Shopping</p>
+                        </div>
+                        
+
+                    </div> <!-- card-body.// -->
+                </div> <!-- card .// -->
+                <div class="card-body border-top">
+                    <a href="product" class="btn btn-light" style="float: left;"> <i class="fa fa-chevron-left"></i> Continue shopping </a>
+                </div>
+            </aside> <!-- col.// -->
+        </div>
+
+    </div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name bg padding-y">
+    <div class="container">
+        <h6>Payment and refund policy</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
